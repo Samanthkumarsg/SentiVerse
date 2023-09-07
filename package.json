@@ -1,0 +1,17 @@
+{
+  "name": "SentiVerse ",
+  "version": "1.0.0",
+  "description": "SentiVerse is a robust Sentiment Analysis API built using Node.js. It empowers you to analyze sentiments in text and files, making it perfect for extracting valuable insights from real-world content, such as news articles, blog posts, customer reviews, and social media data. With its ease of use and scalability, SentiVerse provides a seamless solution for understanding the emotional tone of your content.",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "natural": "^6.7.1",
+    "nodemon": "^3.0.1",
+    "pdf-parse": "^1.1.1",
+    "sentiment": "^5.0.2"
+  }
+}
