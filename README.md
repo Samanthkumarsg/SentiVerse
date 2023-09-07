@@ -1,10 +1,10 @@
-# SentiVerse - Sentiment Analysis API
+# Sentiverse - Sentiment Analysis API
 
 
 
 ## Overview
 
-SentiVerse is a robust Sentiment Analysis API built using Node.js. It empowers you to analyze sentiments in text and files, making it perfect for extracting valuable insights from real-world content, such as news articles, blog posts, customer reviews, and social media data. With its ease of use and scalability, SentiVerse provides a seamless solution for understanding the emotional tone of your content.
+Sentiverse is a robust Sentiment Analysis API built using Node.js. It empowers you to analyze sentiments in text and files, making it perfect for extracting valuable insights from real-world content, such as news articles, blog posts, customer reviews, and social media data. With its ease of use and scalability, SentiVerse provides a seamless solution for understanding the emotional tone of your content.
 
 ## Features
 
