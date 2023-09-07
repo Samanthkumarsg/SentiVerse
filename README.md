@@ -1,6 +1,6 @@
 # SentiVerse - Sentiment Analysis API
 
-![SentiVerse Logo](insert_logo_image_url_here)
+
 
 ## Overview
 
