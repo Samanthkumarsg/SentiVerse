@@ -1,7 +1,7 @@
 {
-  "name": "PDF to text api",
+  "name": "SentiVerse ",
   "version": "1.0.0",
-  "description": "API for extracting text from pdf for porfolio project and other resources",
+  "description": "SentiVerse is a robust Sentiment Analysis API built using Node.js. It empowers you to analyze sentiments in text and files, making it perfect for extracting valuable insights from real-world content, such as news articles, blog posts, customer reviews, and social media data. With its ease of use and scalability, SentiVerse provides a seamless solution for understanding the emotional tone of your content.",
   "scripts": {
     "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"

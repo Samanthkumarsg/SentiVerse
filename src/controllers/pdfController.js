@@ -29,11 +29,22 @@ const extractText = async (req, res) => {
 
     const sentimentalReportOnTextualData = async (req, res) => {
       try {
-          const input = "The movie was terrible.";
+
+          let Emotion;
+          let data = []
+          const input = req.params.input
           console.log(input);
-          const sentimentAnalysisResults = await sentimentalAnalysisOnText(input);
+          let sentimentAnalysisResults = await sentimentalAnalysisOnText(input);
+          if(sentimentAnalysisResults.score > 0){
+            sentimentAnalysisResults.emotion  = "Positive 😁🙂"
+          } else if(sentimentAnalysisResults.score < 0){
+            sentimentAnalysisResults.emotion  = "Negative 😕"
+          }
+          else{
+            sentimentAnalysisResults.emotion  = "Neutral 😶"
+          }
           
-          res.status(201).json({ data: extractedText });
+          res.status(201).json({ data: sentimentAnalysisResults });
         } catch (error) {
           console.error(error);
           res.status(500).json({ error: 'Error extracting PDF text' });

@@ -4,7 +4,7 @@ const {extractText, sentimentalReportOnPDF,sentimentalReportOnTextualData} = req
 
 router.get('/extract-pdf-text', extractText);
 router.get('/sentimental-report-pdf', sentimentalReportOnPDF);
-router.get('/sentimental-report-text', sentimentalReportOnTextualData);
+router.get('/sentimental-report-text/:input', sentimentalReportOnTextualData);
 
 
 

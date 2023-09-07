@@ -31,7 +31,6 @@ const sentimentalAnalysisOnDataFile  = async (file) => {
 
 const sentimentalAnalysisOnText  = async (input) => {
     try {
-        const input = "The movie was terrible."
         console.log(input)
         const SentimentAnalysis = new sentiment();
         const result = SentimentAnalysis.analyze(input)
