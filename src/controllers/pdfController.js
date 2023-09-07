@@ -30,8 +30,6 @@ const extractText = async (req, res) => {
     const sentimentalReportOnTextualData = async (req, res) => {
       try {
 
-          let Emotion;
-          let data = []
           const input = req.params.input
           console.log(input);
           let sentimentAnalysisResults = await sentimentalAnalysisOnText(input);
