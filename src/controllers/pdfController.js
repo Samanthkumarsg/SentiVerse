@@ -1,5 +1,3 @@
-const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
 
 const { extractTextFromPDF, sentimentalAnalysisOnDataFile, sentimentalAnalysisOnText } = require("../models/pdfFunction");
 
