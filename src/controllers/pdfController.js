@@ -4,7 +4,7 @@ const { extractTextFromPDF, sentimentalAnalysisOnDataFile, sentimentalAnalysisOn
 
 const extractText = async (req, res) => {
   try {
-    const pdfPath = 'src/assets/samanth.pdf';
+    const pdfPath = './src/assets/samanth.pdf';
     const extractedText = await extractTextFromPDF(pdfPath);
     console.log(extractedText)
     res.json({ data: extractedText });
@@ -17,7 +17,7 @@ const extractText = async (req, res) => {
 const sentimentalReportOnPDF = async (req, res) => {
   try {
     const { file } = req.body;
-    const pdfPath = 'src/assets/samanth.pdf';
+    const pdfPath = './src/assets/samanth.pdf';
     const extractedText = await sentimentalAnalysisOnDataFile(pdfPath);
     res.status(201).json({ data: extractedText });
   } catch (error) {
