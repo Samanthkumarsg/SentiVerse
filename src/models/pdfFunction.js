@@ -3,18 +3,18 @@ const pdf = require('pdf-parse');
 const natural = require('natural');
 const sentiment = require('sentiment')
 
-const extractTextFromPDF = async (pdfPath)=> {
+const extractTextFromPDF = async (pdfPath) => {
     try {
         const pdfData = await fs.readFile(pdfPath);
-    const pdfText = await pdf(pdfData);
-    return pdfText.text
+        const pdfText = await pdf(pdfData);
+        return pdfText.text
     } catch (error) {
-         return error
+        return error
     }
-    
+
 }
 
-const sentimentalAnalysisOnDataFile  = async (file) => {
+const sentimentalAnalysisOnDataFile = async (file) => {
     try {
         console.log(file)
         const text = await extractTextFromPDF(file)
@@ -22,24 +22,23 @@ const sentimentalAnalysisOnDataFile  = async (file) => {
         const sentimentAnalyzer = new natural.SentimentAnalyzer("English", natural.PorterStemmer, "afinn");
         const sentimentData = sentimentAnalyzer.getSentiment(tokenizer.tokenize(text));
         return sentimentData;
-    
+
     } catch (error) {
-       throw error
+        throw error
     }
 }
 
 
-const sentimentalAnalysisOnText  = async (input) => {
+const sentimentalAnalysisOnText = async (input) => {
     try {
         console.log(input)
         const SentimentAnalysis = new sentiment();
         const result = SentimentAnalysis.analyze(input)
-        console.log(result)
         return result;
-    
+
     } catch (error) {
-       throw error;
+        throw error;
     }
 }
-  
-  module.exports = { extractTextFromPDF,sentimentalAnalysisOnDataFile,sentimentalAnalysisOnText };
+
+module.exports = { extractTextFromPDF, sentimentalAnalysisOnDataFile, sentimentalAnalysisOnText };

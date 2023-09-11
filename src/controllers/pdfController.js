@@ -6,7 +6,6 @@ const extractText = async (req, res) => {
   try {
     const pdfPath = './src/assets/samanth.pdf';
     const extractedText = await extractTextFromPDF(pdfPath);
-    console.log(extractedText)
     res.json({ data: extractedText });
   } catch (error) {
     console.error(error);
@@ -21,7 +20,6 @@ const sentimentalReportOnPDF = async (req, res) => {
     const extractedText = await sentimentalAnalysisOnDataFile(pdfPath);
     res.status(201).json({ data: extractedText });
   } catch (error) {
-    console.error(error);
     res.status(500).json({ error: 'Error extracting PDF text' });
   }
 };
@@ -30,7 +28,6 @@ const sentimentalReportOnTextualData = async (req, res) => {
   try {
 
     const input = req.params.input
-    console.log(input);
     let sentimentAnalysisResults = await sentimentalAnalysisOnText(input);
     if (sentimentAnalysisResults.score > 0) {
       sentimentAnalysisResults.emotion = "Positive 😁🙂"
@@ -43,7 +40,6 @@ const sentimentalReportOnTextualData = async (req, res) => {
 
     res.status(201).json({ data: sentimentAnalysisResults });
   } catch (error) {
-    console.error(error);
     res.status(500).json({ error: 'Error extracting PDF text' });
   }
 };
