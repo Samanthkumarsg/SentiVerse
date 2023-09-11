@@ -28,16 +28,16 @@ const sentimentalReportOnTextualData = async (req, res) => {
   try {
 
     const input = req.params.input
-    let sentimentAnalysisResults = await sentimentalAnalysisOnText(input);
+    const cleanedText = input.replace(/[^a-zA-Z0-9\s]/g, '');
+    let sentimentAnalysisResults = await sentimentalAnalysisOnText(cleanedText);
     if (sentimentAnalysisResults.score > 0) {
-      sentimentAnalysisResults.emotion = "Positive 😁🙂"
+      sentimentAnalysisResults.emotion = "Positive"
     } else if (sentimentAnalysisResults.score < 0) {
-      sentimentAnalysisResults.emotion = "Negative 😕"
+      sentimentAnalysisResults.emotion = "Negative"
     }
     else {
-      sentimentAnalysisResults.emotion = "Neutral 😶"
+      sentimentAnalysisResults.emotion = "Neutral"
     }
-
     res.status(201).json({ data: sentimentAnalysisResults });
   } catch (error) {
     res.status(500).json({ error: 'Error extracting PDF text' });

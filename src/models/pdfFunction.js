@@ -16,7 +16,6 @@ const extractTextFromPDF = async (pdfPath) => {
 
 const sentimentalAnalysisOnDataFile = async (file) => {
     try {
-        console.log(file)
         const text = await extractTextFromPDF(file)
         const tokenizer = new natural.WordTokenizer();
         const sentimentAnalyzer = new natural.SentimentAnalyzer("English", natural.PorterStemmer, "afinn");
@@ -31,7 +30,6 @@ const sentimentalAnalysisOnDataFile = async (file) => {
 
 const sentimentalAnalysisOnText = async (input) => {
     try {
-        console.log(input)
         const SentimentAnalysis = new sentiment();
         const result = SentimentAnalysis.analyze(input)
         return result;
